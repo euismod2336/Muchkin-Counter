@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.NoTitleBar">
+    </style>
+
+    <style name="FullscreenTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="ScrollNumberPicker" parent="android:Theme.Holo">
+
+    </style>
+</resources>

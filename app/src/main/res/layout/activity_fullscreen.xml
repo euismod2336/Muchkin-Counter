@@ -1,0 +1,214 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context=".FullscreenActivity">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <RelativeLayout android:id="@+id/combatLayout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_above="@+id/diceLayout"
+            android:layout_alignParentTop="true">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MonsterLevel"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/textView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MonsterModifiers"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="85dp"
+                android:id="@+id/textView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PlayerModifiers"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="165dp"
+                android:id="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/successMessage"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/textView4" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ResolveCombat"
+                android:id="@+id/resolveCombatButton"
+                android:onClick="resolveCombatClicked"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <NumberPicker
+                android:id="@+id/monsterLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_below="@+id/textView2"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/victoryCheckbox"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/textView4"
+                android:clickable="false"
+                android:layout_alignParentRight="true"/>
+
+            <NumberPicker
+                android:id="@+id/monsterModifiers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:layout_toRightOf="@+id/monsterLevel"
+                android:descendantFocusability="blocksDescendants" />
+
+            <NumberPicker
+                android:id="@+id/playerModifiers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:layout_toRightOf="@+id/monsterModifiers"
+                android:descendantFocusability="blocksDescendants" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/monsterLevel"
+                >
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:onClick="onRadioStepSizeClicked"
+                    android:id="@+id/stepSize1"
+                    android:layout_marginTop="28dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:onClick="onRadioStepSizeClicked"
+                    android:id="@+id/stepSize2"
+                    android:layout_below="@+id/stepSize1"
+                    android:layout_alignLeft="@+id/stepSize1"
+                    android:layout_alignStart="@+id/stepSize1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:onClick="onRadioStepSizeClicked"
+                    android:id="@+id/stepSize3"
+                    android:layout_below="@+id/stepSize2"
+                    android:layout_alignLeft="@+id/stepSize2"
+                    android:layout_alignStart="@+id/stepSize2" />
+
+            </RadioGroup>
+        </RelativeLayout>
+
+        <LinearLayout android:id="@+id/diceLayout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/material_blue_grey_900" android:orientation="horizontal"
+            android:layout_above="@+id/playerLayout"
+            android:layout_alignLeft="@+id/playerLayout"
+            android:layout_alignStart="@+id/playerLayout">
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/RollDiceString"
+                android:id="@+id/rollDiceButton"
+                android:onClick="onRollDiceButtonClicked" />
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:id="@+id/diceResult" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/diceRolledCheckbox"
+                android:clickable="false"
+                android:singleLine="false"
+                android:enabled="false" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout android:id="@+id/playerLayout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/material_deep_teal_500" android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PlayerLevel"
+                android:editable="false" />
+
+            <NumberPicker
+                android:id="@+id/playerLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_marginTop="64dp" />
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PlayerGear"
+                />
+
+            <NumberPicker
+                android:layout_alignParentRight="true"
+                android:id="@+id/playerGear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_marginTop="64dp" />
+
+            <NumberPicker
+                android:theme="@android:style/Theme.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/genderPicker"
+                android:layout_marginTop="64dp"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

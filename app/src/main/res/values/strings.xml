@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MunchkinCounter</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="PlayerLevel">Level</string>
+    <string name="PlayerGear">Gear</string>
+    <string name="MonsterModifiers">+Modifiers</string>
+    <string name="PlayerModifiers">-Modifiers</string>
+    <string name="MonsterLevel">Monster</string>
+    <string name="ResolveCombat">Resolve</string>
+    <string name="successMessage">Success</string>
+    <string name="RollDiceString">Roll dice</string>
+</resources>
