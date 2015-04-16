@@ -13,5 +13,6 @@ Plannen voor vervolg:
  - Achtergrond
  - Aantal sekonden voordat dobbelsteen automatisch verdwijnt
 * Dobbelsteen -> dit moet duidelijker als 'actionsheet' omhoog komen, zodat het duidelijker is wat eruit gekomen is.
+* Langer ingedrukt houden op field dat keyboard omhoog komt om aan te passen.
 
  
